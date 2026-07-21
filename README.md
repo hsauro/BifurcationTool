@@ -18,6 +18,10 @@ diagram, and click points on the diagram to run time-course and phase-plane simu
 
 <img src="Images/TysonNovakModel.png" alt="Screen-shot" width="400"> &nbsp; <img src="Images/FitzHugh-Nagumo-type.png" alt="Screen-shot" width="400">
 
+<p align="center">
+<img src="Images/BistableSystem.png" alt="Screen-shot" width="400">
+</p>
+
 ---
 
 ## Installation

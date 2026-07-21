@@ -1,0 +1,192 @@
+object SimForm: TSimForm
+  Left = 0
+  Top = 0
+  Caption = 'Simulation'
+  ClientHeight = 560
+  ClientWidth = 760
+  Position = MainFormCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnClose = FormClose
+  DesignerMasterStyle = 0
+  object Top: TLayout
+    Align = Top
+    Size.Width = 760.000000000000000000
+    Size.Height = 112.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object leftPanel: TLayout
+      Align = Left
+      Size.Width = 200.000000000000000000
+      Size.Height = 112.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object lblX: TLabel
+        Position.X = 8.000000000000000000
+        Position.Y = 12.000000000000000000
+        Size.Width = 16.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'X'
+        TabOrder = 0
+      end
+      object cbX: TComboBox
+        Position.X = 28.000000000000000000
+        Position.Y = 8.000000000000000000
+        Size.Width = 162.000000000000000000
+        Size.Height = 26.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        OnChange = ReplotEvent
+      end
+      object lblY: TLabel
+        Position.X = 8.000000000000000000
+        Position.Y = 46.000000000000000000
+        Size.Width = 16.000000000000000000
+        Size.Height = 22.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Y'
+        TabOrder = 2
+      end
+      object lbY: TListBox
+        Position.X = 28.000000000000000000
+        Position.Y = 42.000000000000000000
+        Size.Width = 162.000000000000000000
+        Size.Height = 64.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        DisableFocusEffect = True
+        DefaultItemStyles.ItemStyle = ''
+        DefaultItemStyles.GroupHeaderStyle = ''
+        DefaultItemStyles.GroupFooterStyle = ''
+        ShowCheckboxes = True
+        OnChangeCheck = ReplotEvent
+        Viewport.Width = 158.000000000000000000
+        Viewport.Height = 60.000000000000000000
+      end
+    end
+    object rightPanel: TLayout
+      Align = Right
+      Position.X = 564.000000000000000000
+      Size.Width = 196.000000000000000000
+      Size.Height = 112.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object lblSimT: TLabel
+        Position.X = 8.000000000000000000
+        Position.Y = 6.000000000000000000
+        Size.Width = 84.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Sim time'
+        TabOrder = 0
+      end
+      object nbSimTime: TNumberBox
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 1
+        Cursor = crIBeam
+        DecimalDigits = 0
+        Max = 1000000000.000000000000000000
+        Value = 20.000000000000000000
+        ValueType = Float
+        KeyboardType = NumbersAndPunctuation
+        Position.X = 8.000000000000000000
+        Position.Y = 26.000000000000000000
+        Size.Width = 86.000000000000000000
+        Size.Height = 26.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object lblSimP: TLabel
+        Position.X = 102.000000000000000000
+        Position.Y = 6.000000000000000000
+        Size.Width = 84.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        Text = 'Points'
+        TabOrder = 2
+      end
+      object nbSimPts: TNumberBox
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 3
+        Cursor = crIBeam
+        DecimalDigits = 0
+        Min = 2.000000000000000000
+        Max = 1000000.000000000000000000
+        Value = 500.000000000000000000
+        KeyboardType = NumbersAndPunctuation
+        Position.X = 102.000000000000000000
+        Position.Y = 26.000000000000000000
+        Size.Width = 86.000000000000000000
+        Size.Height = 26.000000000000000000
+        Size.PlatformDefault = False
+      end
+      object btnRerun: TButton
+        Position.X = 8.000000000000000000
+        Position.Y = 74.000000000000000000
+        Size.Width = 180.000000000000000000
+        Size.Height = 26.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        Text = 'Re-run'
+        OnClick = btnRerunClick
+      end
+    end
+    object memInfo: TMemo
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      DataDetectorTypes = []
+      ReadOnly = True
+      Align = Client
+      Margins.Left = 6.000000000000000000
+      Margins.Top = 8.000000000000000000
+      Margins.Right = 6.000000000000000000
+      Margins.Bottom = 8.000000000000000000
+      Size.Width = 352.000000000000000000
+      Size.Height = 96.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Viewport.Width = 352.000000000000000000
+      Viewport.Height = 96.000000000000000000
+    end
+  end
+  object plot: TSkPlotPaintBox
+    Align = Client
+    HitTest = True
+    Size.Width = 760.000000000000000000
+    Size.Height = 448.000000000000000000
+    Size.PlatformDefault = False
+    PickTolerance = 8.000000000000000000
+    ZoomPanEnabled = True
+    AxisLimits.MaxX = 1.000000000000000000
+    AxisLimits.MaxY = 1.000000000000000000
+    AxisStyle.LogX = False
+    AxisStyle.LogY = False
+    AxisStyle.XMajorTickLength = 8.000000000000000000
+    AxisStyle.XMinorTickLength = 5.000000000000000000
+    AxisStyle.YMajorTickLength = 8.000000000000000000
+    AxisStyle.YMinorTickLength = 5.000000000000000000
+    AutoXScaling = True
+    AutoYScaling = True
+    ChartTitle.Text = 'Time course'
+    ChartTitle.Visible = True
+    ChartTitle.Color = claBlack
+    ChartTitle.FontSize = 16.000000000000000000
+    XAxisTitle.Text = 'time'
+    XAxisTitle.Visible = True
+    XAxisTitle.Color = claBlack
+    XAxisTitle.FontSize = 14.000000000000000000
+    YAxisTitle.Text = 'value'
+    YAxisTitle.Visible = True
+    YAxisTitle.Color = claBlack
+    YAxisTitle.FontSize = 14.000000000000000000
+    XAxisFontSize = 14.000000000000000000
+    YAxisFontSize = 14.000000000000000000
+    OriginOnAxis = False
+    PlotAreaColor = claWhite
+    PlotBorderColor = claBlack
+    PlotBorderWidth = 1.500000000000000000
+    PlotBorderVisible = True
+    BackGroundColor = claWhite
+  end
+end

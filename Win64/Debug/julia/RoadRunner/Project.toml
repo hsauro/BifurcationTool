@@ -1,0 +1,17 @@
+name = "RoadRunner"
+uuid = "e916ade1-3a88-4cc2-a33a-2915d20637d9"
+authors = ["Jin Xu", "Adel Heydarabadipour"]
+version = "2.7.1"
+
+[deps]
+Libdl = "8f399da3-3557-5675-b5ff-fb832c97cbdb"
+
+[compat]
+julia = "1.9"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+SafeTestsets = "1bc83da4-3b8d-516f-aca4-4fe02f6d838f"
+
+[targets]
+test = ["Test", "SafeTestsets"]

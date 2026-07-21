@@ -1,0 +1,23 @@
+/*
+[bifurcation]
+parameter: A
+min: 0.05
+max: 20
+start: 
+ds: 0.001
+dsMax: 0.005
+maxSteps: 100000
+ymin: 
+ymax: 
+*/
+
+// Edelstein (bimolecular autocatalysis + enzyme sequestration, E + C conserved):
+
+R0: -> X;        kb;          // small basal influx (keeps the low state at X>0)
+R1: X -> 2 X;    k1*A*X;      // autocatalysis (A = substrate, the control parameter)
+R2: 2 X -> X;    km1*X^2;
+R3: X + E -> C;  k2*X*E;      // enzyme binds X
+R4: C -> X + E;  km2*C;
+R5: C -> E;      k3*C;        // catalysis (product removed)
+X = 0.2; E = 1; C = 0;
+A = 4; k1 = 1; km1 = 0.2; k2 = 50; km2 = 1; k3 = 1; kb = 0.1;   // sweep A

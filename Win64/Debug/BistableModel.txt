@@ -1,0 +1,26 @@
+
+J1: -> X;  B;
+J2: X -> ; a3*X;
+J3: -> X;  a2*X^2;
+J4: X -> ; a1*X^3;
+
+X = 1.7;
+B = 23.0;
+a1 = 1.0;
+a2 = 9.0;
+a3 = 26.0;
+
+
+/*
+[bifurcation]
+parameter: B
+min: 0.1
+max: 55
+# start is the parameter value to begin continuation from;
+# blank = auto-pick.
+start: 
+ds: 0.001
+dsMax: 0.005
+maxSteps: 100000
+conservedMoieties: yes
+*/

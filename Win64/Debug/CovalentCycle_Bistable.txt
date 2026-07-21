@@ -1,0 +1,17 @@
+/*
+[bifurcation]
+parameter: k0
+min: 0.05
+max: 1.5
+start: 
+ds: 0.001
+dsMax: 0.005
+maxSteps: 100000
+ymin: 
+ymax: 
+*/
+
+J1: R -> Rp;  (k0 + kf*Rp)*R/(Km + R);   // kinase, activated by its own product Rp
+J2: Rp -> R;  Vp*Rp/(Km + Rp);           // phosphatase
+R = 1; Rp = 0;
+k0 = 0.5; kf = 1; Km = 0.02; Vp = 1;     // sweep k0

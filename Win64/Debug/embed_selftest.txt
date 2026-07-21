@@ -1,0 +1,4 @@
+after Find steady state: Steady state at m=8:  a=2.05, x=0.9197, y=0.003491   (r=4.8E-012). Seed set — press Compute.
+seed set = True
+seeded compute: nPts=5209 maxX=0.937 (>0.8 => high branch reached)
+SELFTEST OK

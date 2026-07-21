@@ -1,0 +1,23 @@
+
+/*
+[bifurcation]
+parameter: kin
+min: 20
+max: 28
+start: 
+ds: 0.001
+dsMax: 0.02
+maxSteps: 20000
+ymin: 
+ymax: 
+*/
+// Genuine Schlogl bistable reaction network -- mass-action rates that MATCH stoichiometry.
+R1: $A + 2 X -> 3 X;   k1*A*X^2;   // autocatalysis: 2 X's react, so rate ~ X^2
+R2: 3 X -> $A + 2 X;   k2*X^3;     // reverse: 3 X's react, so rate ~ X^3
+R3: -> X;              kin;        // constant influx  (continuation parameter)
+R4: X -> ;             k4*X;       // first-order removal -- rate matches stoichiometry
+
+A = 9;
+k1 = 1; k2 = 1; k4 = 26;
+kin = 24;
+X = 1;

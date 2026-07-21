@@ -1,0 +1,30 @@
+/*
+[bifurcation]
+parameter: m
+min: -2
+max: 12
+start: 8
+ds: 0.001
+dsMax: 0.005
+maxSteps: 100000
+*/
+-> a; k5p+k5pp*(m*x)^n/(J5^n+(m*x)^n)-k6*a
+-> x; k1-(k2p+k2pp*y)*x
+-> y; (k3p+k3pp*a)*(1-y)/(J3+1-y)-k4*m*x*y/(J4+y)
+J3=.04
+J4=.04
+J5=.3
+k1=0.04
+k2p=0.04
+k2pp=1
+k3p=1
+k3pp=10
+k4=35
+k5p=.005
+k5pp=.2
+k6=.1
+m=1
+n=4
+a = 1
+x = 1
+y = 1

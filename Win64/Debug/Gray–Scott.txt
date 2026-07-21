@@ -1,0 +1,22 @@
+/*
+Grey-Scot model, an isola and a secodn trival branch
+when U = 1, V = 0
+
+[bifurcation]
+parameter: F
+min: 0
+max: 0.25
+start: 0.08   ; seed on the isola, not the trivial branch
+ds: 0.0005
+dsMax: 0.002
+maxSteps: 220
+ymin: 
+ymax: 
+*/
+J1: -> U;  F*(1 - U) - U*V^2;
+J2: -> V;  U*V^2 - (F + k)*V;
+
+F = 0.08;
+k  = 0.04;
+U = 0.3;
+V = 0.5;

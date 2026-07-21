@@ -14,6 +14,10 @@ diagram, and click points on the diagram to run time-course and phase-plane simu
 - ~2 GB free disk space (the Julia runtime payload is large). Internet access is needed **once**, to
   download Julia itself — nothing else is fetched.
 
+if you wish to build the Delphi application, you need to install the plotting component at:
+
+https://github.com/hsauro/Plot2DComponent
+
 ## Screenshots
 
 <img src="Images/TysonNovakModel.png" alt="Screen-shot" width="400"> &nbsp; <img src="Images/FitzHugh-Nagumo-type.png" alt="Screen-shot" width="400">

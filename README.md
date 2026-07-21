@@ -16,7 +16,7 @@ diagram, and click points on the diagram to run time-course and phase-plane simu
 
 ## Screenshot
 
-<img src="Images/TysonNovakModel.png" alt="Screen-shot" width="400"><img src="Images/FitzHugh-Nagumo-type.png" alt="Screen-shot" width="400">
+<img src="Images/TysonNovakModel.png" alt="Screen-shot" width="400"> &nbsp; <img src="Images/FitzHugh-Nagumo-type.png" alt="Screen-shot" width="400">
 
 ---
 

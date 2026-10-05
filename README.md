@@ -4,7 +4,7 @@ A Windows desktop application for **bifurcation analysis** of biochemical / ODE 
 model in [Antimony](https://tellurium.readthedocs.io/en/latest/antimony.html), compute a bifurcation
 diagram, and click points on the diagram to run time-course and phase-plane simulations.
 
-This code was developed using AI assistance, specifically Claude. If you don't like apps that were developed with AI assistance, please move one.
+This code was developed using a combination of human effort and AI assistance, specifically Claude. If you don't like apps that were developed with AI assistance, please move one.
 
 ---
 
